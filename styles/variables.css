@@ -1,1 +1,20 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    --contour-color: #000;
+    --animation-fill-color: red;
+  --text-color: #ffffff; /* Белый текст */
+  --bg-color: #ffffff; /* Белый фон */
+  --overlay-color: #000000; /* Чёрный псевдоэлемент */
+  --font-primary: "Inter", sans-serif;
+  --font-accent: "PressStart2P", sans-serif;
+  --gradient-bg: repeating-linear-gradient(
+      to right,
+      #d3d3d3 0 2px,
+      transparent 0px 4px
+    ),
+    /* 2. Вертикальные полоски (сверху вниз): 2px #d3d3d3 + 2px transparent */
+      repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 0px 4px),
+    /* 3. Плавный вертикальный градиент: от #e7e7e7 к #1a1a1a */
+      linear-gradient(to bottom, #e7e7e7, #1a1a1a);
+  --stroke-color: #ffffff;
+}
