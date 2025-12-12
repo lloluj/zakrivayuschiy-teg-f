@@ -70,11 +70,8 @@ img {
 .header__title {
   font-family: var(--font-accent);
   font-weight: 400;
-  font-style: Regular;
   font-size: 49px;
-  leading-trim: NONE;
   line-height: 100%;
-  letter-spacing: 0%;
   vertical-align: bottom;
   text-transform: uppercase;
   margin-bottom: 20px;
@@ -83,11 +80,8 @@ img {
 .header__text {
   font-family: var(--font-accent);
   font-weight: 400;
-  font-style: Regular;
   font-size: 14px;
-  leading-trim: NONE;
   line-height: 100%;
-  letter-spacing: 0%;
   text-transform: uppercase;
 
 }
@@ -108,11 +102,8 @@ img {
 .list__title {
   font-family: var(--font-primary);
   font-weight: 715;
-  font-style: Bold;
   font-size: 18px;
-  leading-trim: NONE;
   line-height: 100%;
-  letter-spacing: 0%;
   vertical-align: middle;
 }
 .card-wrapper {
@@ -127,11 +118,8 @@ img {
   mix-blend-mode: hard-light;
   font-family: var(--font-accent);
   font-weight: 400;
-  font-style: Regular;
   font-size: 14px;
-  leading-trim: NONE;
   line-height: 100%;
-  letter-spacing: 0%;
   text-transform: uppercase;
   -webkit-text-stroke: 1px var(--stroke-color);
   text-shadow: 
@@ -157,20 +145,14 @@ img {
 .list__text {
   font-family: var(--font-primary);
   font-weight: 410;
-  font-style: Regular;
   font-size: 18px;
-  leading-trim: NONE;
   line-height: 21px;
-  letter-spacing: 0%;
 }
 .memories {
   font-family: var(--font-primary);
   font-weight: 410;
-  font-style: Regular;
   font-size: 18px;
-  leading-trim: NONE;
   line-height: 21px;
-  letter-spacing: 0%;
   margin-bottom: 25px;
 }
 .list__text,
@@ -192,11 +174,8 @@ img {
   padding: 12.5px 37px;;
   font-family: var(--font-accent);
   font-weight: 400;
-  font-style: Regular;
   font-size: 14px;
-  leading-trim: NONE;
   line-height: 90%;
-  letter-spacing: 0%;
 
 }
 .block__saving {
@@ -210,11 +189,8 @@ img {
   padding: 17px 20px;
   font-family: var(--font-accent);
   font-weight: 400;
-  font-style: Regular;
   font-size: 14px;
-  leading-trim: NONE;
   line-height: 90%;
-  letter-spacing: 0%;
   vertical-align: middle;
   border: 1px solid black;
 }
@@ -324,7 +300,7 @@ img {
 
 .like-icon.is-liked .main-body {
   fill: var(--animation-fill-color);
-  transition-delay: 0.0ss;
+  transition-delay: 0.0s;
 }
 
 .like-icon.is-liked .contour {
@@ -350,11 +326,8 @@ img {
 .insert__text {
   font-family: var(--font-accent);
   font-weight: 400;
-  font-style: Regular;
   font-size: 14px;
-  leading-trim: NONE;
   line-height: 150%;
-  letter-spacing: 0%;
   text-transform: uppercase;
 }
 .button__ok {
@@ -364,11 +337,8 @@ img {
   margin-top: 30px;
   font-family: var(--font-accent);
   font-weight: 400;
-  font-style: Regular;
   font-size: 14px;
-  leading-trim: NONE;
   line-height: 90%;
-  letter-spacing: 0%;
   text-transform: uppercase;
 
 }
