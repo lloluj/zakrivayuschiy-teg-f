@@ -1,7 +1,7 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-    --contour-color: #000;
-    --animation-fill-color: red;
+  --contour-color: #000;
+  --animation-fill-color: red;
   --text-color: #ffffff; /* Белый текст */
   --bg-color: #ffffff; /* Белый фон */
   --overlay-color: #000000; /* Чёрный псевдоэлемент */
