@@ -13,9 +13,6 @@
 * {
   box-sizing: border-box;
 }
-.page {
-  font-variation-settings: "wght" 410;
-}
 img {
   width: clamp(62px, 100%, 700px);
 }
@@ -48,6 +45,7 @@ img {
   min-block-size: 100dvb;
   font-family: var(--font-primary);
   font-weight: 410;
+  font-variation-settings: "wght" 410;
 }
 .block {
   width: clamp(62px, 100%, 700px);
@@ -189,15 +187,8 @@ img {
 .icon__dicseta {
   margin: 0 auto;
   margin-bottom: 8px;
-}
-#memory-dialog {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  display: none;
-}
-#memory-dialog[open] {
-  display: block;
+  mix-blend-mode: difference;
+  filter: invert(1);
 }
 .btn-action {
   position: relative;
@@ -231,10 +222,7 @@ img {
   color: #fff;
   mix-blend-mode: difference;
 }
-.icon__dicseta {
-  mix-blend-mode: difference;
-  filter: invert(1);
-}
+
 .like-icon {
   transition: outline 0.3s ease, height 0.3s ease;
   outline: none;

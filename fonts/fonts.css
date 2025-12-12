@@ -10,8 +10,8 @@
 
 @font-face {
   font-family: "Inter";
-  src: url("../fonts/Inter-Variable.woff2") format("woff2-variations"),
+  src: url("../fonts/Inter-Variable.woff2") format("woff2-variations")  supports variations,
     url("../fonts/Inter-Variable.woff") format("woff");
-  font-weight: 100 900; /* Диапазон весов: от тонкого до очень жирного */
+  font-weight: 400 785; /* Диапазон весов: от тонкого до очень жирного */
   font-display: swap;
 }
