@@ -15,6 +15,7 @@
 }
 img {
   width: clamp(62px, 100%, 700px);
+  max-height: 371px;
 }
 .filter-sepia {
   filter: sepia(0.8);
@@ -49,21 +50,23 @@ img {
 }
 .block {
   width: clamp(62px, 100%, 700px);
+  
 }
 .header {
   margin-top: 100px;
   margin-bottom: 100px;
-  height: 327px;
+  padding: 122px 0;
   background-color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 2px solid black;
 }
 .header__title {
   font-family: var(--font-accent);
   font-weight: 400;
-  font-size: 49px;
+  font-size: clamp(3.0625rem, 2.7768rem + 1.4286vw, 4.0625rem);
   line-height: 100%;
   vertical-align: bottom;
   text-transform: uppercase;
@@ -73,33 +76,34 @@ img {
 .header__text {
   font-family: var(--font-accent);
   font-weight: 400;
-  font-size: 14px;
+  font-size: clamp(0.875rem, 0.7143rem + 0.8036vw, 1.4375rem);
   line-height: 100%;
   text-transform: uppercase;
 }
 .main__list {
   display: flex;
   flex-direction: column;
-  gap: 52px;
+  gap: 48px;
 }
 .list-item {
-  border: 1px solid black;
+  border: 2px solid black;
 }
 .list-item__title {
   padding: 4px 10px;
   background-color: #fff;
-  border: 1px solid black;
+  border: 2px solid black;
 }
 .list__title {
   font-family: var(--font-primary);
-  font-weight: 715;
+  font-variation-settings: "wght" 715;
   font-size: 18px;
   line-height: 100%;
   vertical-align: middle;
 }
 .card-wrapper {
   position: relative;
-  margin-bottom: -5px;
+  /* margin-bottom: -5px; */
+  display: flex;
 }
 .label {
   position: absolute;
@@ -112,23 +116,26 @@ img {
   font-size: 14px;
   line-height: 100%;
   text-transform: uppercase;
-  -webkit-text-stroke: 1px var(--stroke-color);
   text-shadow: -1px -1px 0 var(--stroke-color), 1px -1px 0 var(--stroke-color),
     -1px 1px 0 var(--stroke-color), 1px 1px 0 var(--stroke-color);
 }
-@supports (-webkit-text-stroke: 1px black) {
+@supports (-webkit-text-stroke: 1px black) or (text-stroke: 1px black) {
   .label {
     -webkit-text-stroke: 1px var(--stroke-color);
+    text-stroke: 1px var(--stroke-color);
+    text-shadow: none;
   }
 }
 .list-item__text {
   position: relative;
+  display: flex;
+  flex-direction: column;
   background-color: #fff;
-  border: 1px solid black;
+  border: 2px solid black;
   padding-top: 25px;
   padding-left: 25px;
   padding-right: 25px;
-  padding-bottom: 50px;
+  padding-bottom: 25px;
 }
 .list__text {
   font-family: var(--font-primary);
@@ -143,23 +150,23 @@ img {
   line-height: 21px;
   margin-bottom: 25px;
 }
-.list__text,
-.memories {
+.list__text {
   margin-bottom: 25px;
 }
 .buttons {
   display: flex;
-  position: absolute;
-  bottom: 25px;
-  right: 25px;
+  gap: 2px;
+  justify-content: end;
 }
 .card__icon-button {
+  
   background-color: transparent;
   border: none;
 }
 .card__like-button {
   background-color: #fff;
-  padding: 12.5px 37px;
+  width: 130px;
+  height: 38px;
   font-family: var(--font-accent);
   font-weight: 400;
   font-size: 14px;
@@ -167,18 +174,19 @@ img {
 }
 .block__saving {
   margin-top: 50px;
+  margin-bottom: 100px;
 }
 .save {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  padding: 17px 20px;
+  padding: 12px 20px;
   font-family: var(--font-accent);
   font-weight: 400;
   font-size: 14px;
   line-height: 90%;
   vertical-align: middle;
-  border: 1px solid black;
+  border: 2px solid black;
 }
 .button__text__save {
   display: flex;
@@ -224,13 +232,12 @@ img {
 }
 
 .like-icon {
-  transition: outline 0.3s ease, height 0.3s ease;
   outline: none;
 }
 .like-icon:focus {
   outline: none;
 }
-.like-icon:focus-visible {
+.card__icon-button:focus-visible {
   outline: 2px solid black;
 }
 .contour {
@@ -239,33 +246,38 @@ img {
 
 /* Основное тело — медленный переход (0.3s), без задержки */
 .main-body {
-  transition: fill 0.3s linear 0.05s;
+  fill: transparent;
+  transition: fill 0.3s linear;
 }
 
 /* Сердцевина — медленный переход (0.3s) с задержкой (0.03s) */
 .core {
-  transition: fill 0.3s linear;
+  transition: fill 0.3s linear 0.03s;
+  fill: transparent;
 }
 .sparks {
   opacity: 0;
 }
 
 .like-icon:hover .core {
+  transition-delay: 0s;
   fill: var(--contour-color); /* Цвет акцентного состояния */
 }
 
 .like-icon:hover .main-body {
+  transition-delay: 0.05s;
   fill: var(--contour-color); /* Цвет основного тела */
 }
-
-.like-icon:active .main-body,
+.like-icon:active .main-body {
+  transition-delay: 0.05s;
+}
 .like-icon:active .core {
-  fill: var(--animation-fill-color); /* красный цвет */
+  transition-delay: 0s;
 }
 
-.like-icon.is-liked .heart {
-  animation: scaleHeart 0.3s ease-in 0.1s forwards;
-}
+
+
+
 
 .like-icon.is-liked .core {
   fill: var(--animation-fill-color);
@@ -274,7 +286,7 @@ img {
 
 .like-icon.is-liked .main-body {
   fill: var(--animation-fill-color);
-  transition-delay: 0s;
+  transition-delay: 0.05s;
 }
 
 .like-icon.is-liked .contour {
@@ -283,13 +295,12 @@ img {
   transition-delay: 0.06s;
 }
 
-.like-icon.is-liked .sparks {
-  animation: sparkle 0.3s ease-in 0.3 forwards;
-}
+
 
 .dialog {
+  background-color: #fff;
   width: 341px;
-  height: 191px;
+  /* height: 191px; */
   padding: 30px 40px;
   overflow: hidden;
 }
@@ -306,7 +317,7 @@ img {
 }
 .button__ok {
   background-color: transparent;
-  border: 1px solid black;
+  border: 2px solid black;
   padding: 12.5px 116.5px;
   margin-top: 30px;
   font-family: var(--font-accent);
@@ -315,26 +326,12 @@ img {
   line-height: 90%;
   text-transform: uppercase;
 }
-@keyframes scaleHeart {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.25);
-  }
-}
-
-@keyframes sparkle {
-  0%,
-  100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-}
 
 @media (width >= 768px) {
+  img {
+    min-height: 696px;
+  }
+  
   .page {
     display: flex;
     flex-direction: column;
@@ -357,7 +354,18 @@ img {
     justify-content: center;
     align-items: center;
   }
-  .icon__dicseta {
-    margin-right: 8px;
+
+  .save__text {
+    margin-left: 8px;
+  }
+}
+@media (width >= 1440px) {
+  .header {
+    height: 368px;
+  }
+  .save {
+    min-width: 335px;
+    height: 55px;
+    text-align: center;
   }
 }
